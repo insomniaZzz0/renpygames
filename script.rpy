@@ -1,33 +1,60 @@
-﻿# The script of the game goes in this file.
+﻿
+# personagens
+define p = Character("Pisquinha")
+define h = Character("Husk")
+define k = Character("Kai")
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
 
-define e = Character("Eileen")
-
-
-# The game starts here.
+# o Jogo começa aqui
 
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    scene cena1
 
-    scene bg room
+    "Dois irmãos Pisquinha e Husk lutam pela liderança do clã dos lobos"
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    p "Não quero brigar com você irmão"
 
-    show eileen happy
+    p "Esta luta não faz sentido pra mim"
 
-    # These display lines of dialogue.
+    show husk
 
-    e "You've created a new Ren'Py game."
+    h "Deixa de conversa mole Pisquinha"
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    h "Isto pra mim tem outro nome"
 
-    # This ends the game.
+    h "Covardia!"  
+
+    hide husk
+
+    "Pisquinha deve enfrentar o irmão Husk?"
+
+menu:
+
+    "Sim":
+        jump game
+
+    "Não":
+        jump book
+
+label game:
+
+    p "Se não outra escolha, eu estou pronto irmão"
+
+    h "Farei o que deve ser feito"
+
+    jump marry
+
+label book:
+
+    h "Você não tem escolha, lembre-se a força vem do seu interior"
+
+    p "Eu não queria, mas é o unico jeito"
+
+    jump marry
+
+label marry:
+
+    "Os irmão batalham"  
 
     return
